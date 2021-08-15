@@ -23,4 +23,5 @@ jobs:
         cd Baka-Msm-4.14
     - name: Get Script Building
       run: |
-        curl https://raw.githubusercontent.com/"${GITHUB_USER}"/myscripts/master/MASTER.sh > run.sh > bash run.sh
+        curl https://raw.githubusercontent.com/"${GITHUB_USER}"/myscripts/master/MASTER.sh > run.sh &&
+        bash run.sh
