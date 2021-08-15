@@ -1,0 +1,27 @@
+name: ANDROID BUILD KERNEL
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup
+      run: |
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        sudo apt-get update
+        sudo apt-get install -y git
+    - name: Clone Repository
+      run: |
+        git clone https://github.com/Baka-Project/Baka-Msm-4.14 &&
+        cd Baka-Msm-4.14
+    - name: Get Script Building
+      run: |
+        curl https://raw.githubusercontent.com/"${GITHUB_USER}"/myscripts/master/MASTER.sh > run.sh > source run.sh
+    - uses: yanzay/notify-telegram@v0.1.0
+      if: always()
+      with:
+        chat: ${{ secrets.CHAT }} # user id or channel name secret
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }} # token secret
+        status: ${{ job.status }} # do not modify this line
