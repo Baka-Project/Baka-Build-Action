@@ -22,7 +22,7 @@ jobs:
         git clone https://github.com/Baka-Project/Baka-Msm-4.4
     - name : Go To Dir
       run: |
-        cd Baka-Msm-4.14
+        cd Baka-Msm-4.4
     - name: Get Script Building
       run: |
         wget https://raw.githubusercontent.com/vcyzteen/myscripts/master/MASTER.sh
