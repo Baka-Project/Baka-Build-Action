@@ -19,7 +19,9 @@ jobs:
         sudo apt-get install -y git
     - name: Clone Repository
       run: |
-        git clone https://github.com/Baka-Project/Baka-Msm-4.14 &&
+        git clone https://github.com/Baka-Project/Baka-Msm-4.14
+    - name : Go To Dir
+      run: |
         cd Baka-Msm-4.14
     - name: Get Script Building
       run: |
