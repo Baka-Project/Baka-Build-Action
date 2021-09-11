@@ -16,7 +16,7 @@ jobs:
       run: |
         sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         sudo apt-get update
-        sudo apt-get install -y git
+        sudo apt-get install -y git wget
     - name: Clone Repository
       run: |
         git clone https://github.com/Baka-Project/Baka-Msm-4.14
@@ -25,7 +25,7 @@ jobs:
         cd Baka-Msm-4.14
     - name: Get Script Building
       run: |
-        curl https://raw.githubusercontent.com/vcyzteen/myscripts/master/MASTER.sh
+        wget https://raw.githubusercontent.com/vcyzteen/myscripts/master/MASTER.sh
     - name: Starting
       run: |
         bash MASTER.sh
