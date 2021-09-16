@@ -2,12 +2,12 @@ name: ANDROID BUILD KERNEL
 
 on:
   push:
-  schedule:
-    - cron: '* * * * *'
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
 
 jobs:
   build:
-
     runs-on: ubuntu-20.04
 
     steps:
